@@ -8,22 +8,45 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var buttonEnter: UIButton!
+    @IBOutlet weak var tapView: UIView!
+    @IBOutlet weak var ViewTapTap: UIView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let recognizer = UITapGestureRecognizer (target: self, action: #selector(onTap))
+        view.addGestureRecognizer(recognizer)
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func onTap () {
+        print("tap")
+        self.view.endEditing(true)
+        
     }
-    */
-
-}
+ 
+    @IBAction func loginButtonPress(_ sender: Any) {
+        
+        if let login = userNameField.text, login == "admin"{
+            userNameField.backgroundColor = UIColor.green
+        }
+        else {
+            userNameField.backgroundColor = UIColor.red
+        }
+    }
+  
+    @IBAction func passwordButtonPress(_ sender: Any) {
+        if let password = loginField.text, password == "1111" {
+            loginField.backgroundColor = UIColor.green
+        }
+        else {
+            loginField.backgroundColor = UIColor.red
+        }
+    }
+    }
