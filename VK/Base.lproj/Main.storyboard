@@ -49,16 +49,13 @@
                                                 <rect key="frame" x="20" y="140" width="213.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                <connections>
-                                                    <action selector="passwordButtonPress:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fFb-mu-R3P"/>
-                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWm-cF-JiM">
                                                 <rect key="frame" x="174.5" y="234" width="65" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Войти"/>
                                                 <connections>
-                                                    <action selector="LoginButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MxW-M0-qXZ"/>
+                                                    <action selector="loginButPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53y-V3-Nvw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
