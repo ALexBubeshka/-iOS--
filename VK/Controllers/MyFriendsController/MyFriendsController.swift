@@ -1,16 +1,7 @@
-//
-//  MyFriendsController.swift
-//  VK
-//
-//  Created by Alexander Bubeshka on 3.06.22.
-//
 
 import UIKit
 
-
-
 class MyFriendsController: UIViewController {
-    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,6 +21,7 @@ class MyFriendsController: UIViewController {
     var myFriends = [Friend]()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         myFriends = fillData()
@@ -39,25 +31,8 @@ class MyFriendsController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-    }
-   
-}
-
-extension MyFriendsController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewReuseIdentifier, for: indexPath) as? CustomTableViewCell else { return UITableViewCell()}
-        
-        let friend = myFriends[indexPath.row]
-        cell.configure(image: UIImage(named: friend.avatar!), name: friend.name, discriprion: friend.age)
     
-        
-        return cell
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myFriends.count
-    }
-}
-extension MyFriendsController: UITableViewDelegate {
 }
