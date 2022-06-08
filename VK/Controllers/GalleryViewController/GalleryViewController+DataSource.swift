@@ -1,19 +1,21 @@
+
 import UIKit
 
-extension MyGroupsController: UICollectionViewDataSource {
+extension GalleryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 50
+        return self.fotoAlbum.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCollectionViewCell, for: indexPath) as! CustomCollectionViewCell
         
-        cell.configure(image: UIImage(named: "Вадим"))
+        cell.configure(image: UIImage(named: self.fotoAlbum[indexPath.item]))
         
         return cell
         
     }
 }
+

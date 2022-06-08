@@ -1,9 +1,3 @@
-//
-//  Friend.swift
-//  VK
-//
-//  Created by Alexander Bubeshka on 3.06.22.
-//
 
 import Foundation
 

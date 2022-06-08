@@ -5,12 +5,14 @@ class MyFriendsController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let fromFriendsListToGallery = "fromFriendsListToGallery"
+    
     let CustomTableViewReuseIdentifier = "CustomTableViewReuseIdentifier"
     
     func fillData() -> [Friend] {
-        let friend1 = Friend (name: "Вадим", age: "31", avatar: "Вадим", fotoAlbum:[])
-        let friend2 = Friend (name: "Александр", age: "32", avatar: "Вадим1", fotoAlbum:[])
-        let friend3 = Friend (name: "Егор", age: "32", avatar: "Вадим2", fotoAlbum:[])
+        let friend1 = Friend (name: "Вадим", age: "31", avatar: "Вадим", fotoAlbum:["Вадим"])
+        let friend2 = Friend (name: "Александр", age: "32", avatar: "Вадим1", fotoAlbum:["Вадим","Вадим1","Вадим2"])
+        let friend3 = Friend (name: "Егор", age: "32", avatar: "Вадим2", fotoAlbum:["Вадим2"])
         var friendsArray = [Friend]()
         friendsArray.append(friend1)
         friendsArray.append(friend2)

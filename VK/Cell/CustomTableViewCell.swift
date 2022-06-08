@@ -28,4 +28,9 @@ class CustomTableViewCell: UITableViewCell {
         NameLabel.text = name
         descriptionLabel.text = discriprion
     }
+    func configure (_ group: Group){
+        fotoImageVIew.image = UIImage(named: group.avatar)
+        NameLabel.text = group.name
+        descriptionLabel.text = group.description
+    }
 }
