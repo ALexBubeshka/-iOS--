@@ -115,15 +115,15 @@
             </objects>
             <point key="canvasLocation" x="-86" y="104"/>
         </scene>
-        <!--View Controller-->
+        <!--My Friends Controller-->
         <scene sceneID="Dc4-dj-lAO">
             <objects>
-                <viewController id="KXw-6W-4xQ" sceneMemberID="viewController">
+                <viewController id="KXw-6W-4xQ" customClass="MyFriendsController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="upt-ZS-RVH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ub2-Na-wLi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ub2-Na-wLi">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -140,6 +140,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4GU-ly-N9V"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ub2-Na-wLi" id="UlW-CK-CCU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6T-e7-5mR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,12 +186,31 @@
         <!--MyGroups-->
         <scene sceneID="U1P-vg-7Yd">
             <objects>
-                <viewController id="BgW-8y-dHJ" sceneMemberID="viewController">
+                <viewController id="BgW-8y-dHJ" customClass="MyGroupsController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hKQ-7Y-OKw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lTC-cf-xKB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RCL-dO-0uY">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="h5q-f3-cJO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lTC-cf-xKB" firstAttribute="top" secondItem="h5q-f3-cJO" secondAttribute="top" id="7oo-a8-Fhm"/>
+                            <constraint firstItem="lTC-cf-xKB" firstAttribute="leading" secondItem="h5q-f3-cJO" secondAttribute="leading" id="8db-aJ-f0m"/>
+                            <constraint firstItem="h5q-f3-cJO" firstAttribute="bottom" secondItem="lTC-cf-xKB" secondAttribute="bottom" id="JF9-IC-G5X"/>
+                            <constraint firstItem="h5q-f3-cJO" firstAttribute="trailing" secondItem="lTC-cf-xKB" secondAttribute="trailing" id="dGc-NE-d2k"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MyGroups" id="9DE-oN-Yrh">
                         <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="38k-Ly-bwv">
@@ -197,6 +219,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupsCollectionView" destination="lTC-cf-xKB" id="iw3-8B-V0B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZy-wL-VY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
