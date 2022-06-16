@@ -11,6 +11,7 @@ extension MyFriendsController: UITableViewDelegate {
            let fotos = sender as? [String] {
             
             destinationController.fotoAlbum = fotos
+         
         }
 
     }
@@ -19,7 +20,7 @@ extension MyFriendsController: UITableViewDelegate {
         
         let fotos = myFriends[indexPath.row].fotoAlbum
         performSegue(withIdentifier: fromFriendsListToGallery, sender: fotos)
-        
+       
     }
     
 }

@@ -9,7 +9,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
         let whiteSpeces:CGFloat = 20
         let cellWidth =  width / 3 - whiteSpeces
         
-      return  CGSize (width: cellWidth, height: cellWidth)
+      return  CGSize (width: cellWidth, height: cellWidth + 20)
 
     }
 }

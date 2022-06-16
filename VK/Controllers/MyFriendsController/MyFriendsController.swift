@@ -29,9 +29,10 @@ class MyFriendsController: UIViewController {
         myFriends = fillData()
         
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: CustomTableViewReuseIdentifier)
-      
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

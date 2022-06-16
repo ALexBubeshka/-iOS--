@@ -32,6 +32,8 @@
 		14D42D68284F84D400000518 /* MyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D42D67284F84D400000518 /* MyGroupViewController.swift */; };
 		14D42D6A284F84EC00000518 /* AllGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D42D69284F84EC00000518 /* AllGroupViewController.swift */; };
 		14D42D6C284F863900000518 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D42D6B284F863900000518 /* Group.swift */; };
+		14EC82A9285B3EB0005F2AD5 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC82A8285B3EB0005F2AD5 /* LikeViewController.swift */; };
+		14EC82AC285B3EDA005F2AD5 /* LikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EC82AB285B3EDA005F2AD5 /* LikeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		14D42D67284F84D400000518 /* MyGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupViewController.swift; sourceTree = "<group>"; };
 		14D42D69284F84EC00000518 /* AllGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupViewController.swift; sourceTree = "<group>"; };
 		14D42D6B284F863900000518 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		14EC82A8285B3EB0005F2AD5 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		14EC82AB285B3EDA005F2AD5 /* LikeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				1463A33728509769006BF78A /* AllGroupViewController */,
 				1463A33028509638006BF78A /* GalleryViewController */,
 				1462375A284E81D200AD9411 /* MyFriendsController */,
+				14EC82AA285B3EB5005F2AD5 /* LikeViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +193,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		14EC82AA285B3EB5005F2AD5 /* LikeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				14EC82A8285B3EB0005F2AD5 /* LikeViewController.swift */,
+				14EC82AB285B3EDA005F2AD5 /* LikeViewController.xib */,
+			);
+			path = LikeViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1490B59D283AA705009F1B66 /* LaunchScreen.storyboard in Resources */,
+				14EC82AC285B3EDA005F2AD5 /* LikeViewController.xib in Resources */,
 				1490B59A283AA705009F1B66 /* Assets.xcassets in Resources */,
 				14C119D3284A21A100C8FBCD /* CustomTableViewCell.xib in Resources */,
 				14623755284E717100AD9411 /* CustomCollectionViewCell.xib in Resources */,
@@ -263,6 +278,7 @@
 			files = (
 				14D42D68284F84D400000518 /* MyGroupViewController.swift in Sources */,
 				1463A3392850978E006BF78A /* AllGroupViewController+DataSource.swift in Sources */,
+				14EC82A9285B3EB0005F2AD5 /* LikeViewController.swift in Sources */,
 				14623760284E835F00AD9411 /* MyFriendsControllerDelegate.swift in Sources */,
 				1463A33B285097A2006BF78A /* AllGroupViewController+Delegate.swift in Sources */,
 				14C119D2284A21A100C8FBCD /* CustomTableViewCell.swift in Sources */,
