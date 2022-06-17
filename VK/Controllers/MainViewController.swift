@@ -16,6 +16,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var thirdView: UIView!
     
     
+    
+    
+    
     let ToTabBarController = "ToTabBarController"
     
     
@@ -42,6 +45,22 @@ class MainViewController: UIViewController {
         secondView.layer.cornerRadius = 18
         thirdView.layer.cornerRadius = 18
         
+        firstView.layer.shadowColor = UIColor.black.cgColor
+        firstView.layer.shadowOffset = CGSize(width: 7, height: 5)
+        firstView.layer.shadowRadius = 5
+        firstView.layer.shadowOpacity = 0.5
+        
+        secondView.layer.shadowColor = UIColor.black.cgColor
+        secondView.layer.shadowOffset = CGSize(width: 7, height: 5)
+        secondView.layer.shadowRadius = 5
+        secondView.layer.shadowOpacity = 0.5
+        
+        thirdView.layer.shadowColor = UIColor.black.cgColor
+        thirdView.layer.shadowOffset = CGSize(width: 7, height: 5)
+        thirdView.layer.shadowRadius = 5
+        thirdView.layer.shadowOpacity = 0.5
+        
+        
 
         let recognizer = UITapGestureRecognizer (target: self, action: #selector(onTap))
         view.addGestureRecognizer(recognizer)
@@ -50,15 +69,15 @@ class MainViewController: UIViewController {
     
     
     func animationView() {
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        UIView.animate(withDuration: 0.45) { [weak self] in
             self?.firstView.alpha = 0
             self?.secondView.alpha = 1
         } completion: { _ in
-            UIView.animate(withDuration: 0.3) { [weak self] in
+            UIView.animate(withDuration: 0.45) { [weak self] in
                 self?.secondView.alpha = 0
                 self?.thirdView.alpha = 1
             } completion: { _ in
-                UIView.animate(withDuration: 0.3) { [weak self] in
+                UIView.animate(withDuration: 0.45) { [weak self] in
                     self?.firstView.alpha = 1
                     self?.thirdView.alpha = 0
                 } completion: { [weak self] _ in
