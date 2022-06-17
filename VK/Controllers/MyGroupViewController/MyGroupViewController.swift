@@ -16,6 +16,7 @@ class MyGroupViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(didPressToGroup(_:)), name:  Notification.Name("pressToGroup"), object: nil)
+        
     }
     
     @objc func didPressToGroup(_ notification:Notification){
@@ -31,6 +32,13 @@ class MyGroupViewController: UIViewController {
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            groups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }
 
