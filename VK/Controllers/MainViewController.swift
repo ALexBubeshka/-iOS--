@@ -27,18 +27,23 @@ class MainViewController: UIViewController {
         print("tap")
         self.view.endEditing(true)
     }
-    
+        
     @IBAction func loginButPress(_ sender: UIButton) {
 
-//        if let login = userNameField.text, login == "user", let password = loginField.text, password == "1111" {
-//        userNameField.backgroundColor = UIColor.green
-//        loginField.backgroundColor = UIColor.green
+        if let login = userNameField.text, login == "user", let password = loginField.text, password == "1111" {
+        userNameField.backgroundColor = UIColor.green
+        loginField.backgroundColor = UIColor.green
         performSegue(withIdentifier: ToTabBarController, sender: nil)
-//    } else {
-//        userNameField.backgroundColor = UIColor.red
-//        loginField.backgroundColor = UIColor.red
-//        print ("Wrong login or password")
-   // }
+    } else {
+        let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
 }
+    
+    
+    
+    
 
 }
