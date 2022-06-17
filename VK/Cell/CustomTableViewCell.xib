@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,6 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="359" height="106"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bH7-OO-0PS">
+                        <rect key="frame" x="11" y="5" width="96" height="96"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="psm-nd-prd">
                         <rect key="frame" x="11" y="5" width="96" height="96"/>
                         <constraints>
@@ -23,13 +28,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUX-M1-dUf">
-                        <rect key="frame" x="115" y="32" width="228" height="21"/>
+                        <rect key="frame" x="127" y="32" width="216" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naT-8y-CKc">
-                        <rect key="frame" x="115" y="55" width="228" height="20.5"/>
+                        <rect key="frame" x="127" y="55" width="216" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,11 +45,15 @@
                     <constraint firstAttribute="centerY" secondItem="YUX-M1-dUf" secondAttribute="bottom" id="2rD-uu-cki"/>
                     <constraint firstAttribute="trailing" secondItem="YUX-M1-dUf" secondAttribute="trailing" constant="16" id="6cj-Xb-ieC"/>
                     <constraint firstItem="naT-8y-CKc" firstAttribute="trailing" secondItem="YUX-M1-dUf" secondAttribute="trailing" id="7pJ-4g-HWp"/>
+                    <constraint firstItem="bH7-OO-0PS" firstAttribute="bottom" secondItem="psm-nd-prd" secondAttribute="bottom" id="DQe-O2-LnZ"/>
                     <constraint firstItem="psm-nd-prd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Kt4-SW-BMx"/>
-                    <constraint firstItem="YUX-M1-dUf" firstAttribute="leading" secondItem="psm-nd-prd" secondAttribute="trailing" constant="8" symbolic="YES" id="efC-8d-4Ou"/>
+                    <constraint firstItem="bH7-OO-0PS" firstAttribute="top" secondItem="psm-nd-prd" secondAttribute="top" id="UwG-b1-Gzw"/>
+                    <constraint firstItem="bH7-OO-0PS" firstAttribute="trailing" secondItem="psm-nd-prd" secondAttribute="trailing" id="XAS-aB-ECI"/>
+                    <constraint firstItem="YUX-M1-dUf" firstAttribute="leading" secondItem="psm-nd-prd" secondAttribute="trailing" constant="20" id="efC-8d-4Ou"/>
                     <constraint firstAttribute="bottom" secondItem="psm-nd-prd" secondAttribute="bottom" constant="5" id="gTH-HD-qO2"/>
                     <constraint firstItem="psm-nd-prd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="gzk-vI-hyr"/>
                     <constraint firstItem="naT-8y-CKc" firstAttribute="top" secondItem="YUX-M1-dUf" secondAttribute="bottom" constant="2" id="i9p-ws-ZXp"/>
+                    <constraint firstItem="bH7-OO-0PS" firstAttribute="leading" secondItem="psm-nd-prd" secondAttribute="leading" id="oB0-Ox-xFT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -52,8 +61,14 @@
                 <outlet property="NameLabel" destination="YUX-M1-dUf" id="kD9-ye-xdd"/>
                 <outlet property="descriptionLabel" destination="naT-8y-CKc" id="70A-ml-pfU"/>
                 <outlet property="fotoImageVIew" destination="psm-nd-prd" id="Wvy-ro-nxY"/>
+                <outlet property="shadowView" destination="bH7-OO-0PS" id="ZKS-3c-Dlf"/>
             </connections>
             <point key="canvasLocation" x="129.71014492753625" y="93.75"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -12,6 +12,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var fotoImageVIew: UIImageView!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var shadowView: UIView!
     
     
     
@@ -28,10 +29,11 @@ class CustomTableViewCell: UITableViewCell {
         NameLabel.text = name
         descriptionLabel.text = discriprion
         fotoImageVIew.layer.cornerRadius = 53
-        fotoImageVIew.layer.shadowColor = UIColor.black.cgColor
-        fotoImageVIew.layer.shadowOffset = CGSize(width: 20, height: 10)
-        fotoImageVIew.layer.shadowRadius = 2
-        fotoImageVIew.layer.shadowOpacity = 0.7
+        shadowView.layer.cornerRadius = 53
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 7, height: 5)
+        shadowView.layer.shadowRadius = 5
+        shadowView.layer.shadowOpacity = 0.5
         
     }
     func configure (_ group: Group){
