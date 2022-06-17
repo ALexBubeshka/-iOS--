@@ -8,6 +8,7 @@ class MyGroupViewController: UIViewController {
     let customTableViewCellReuse = "customTableViewCellReuse"
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -15,8 +16,8 @@ class MyGroupViewController: UIViewController {
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: customTableViewCellReuse)
         tableView.dataSource = self
         tableView.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(didPressToGroup(_:)), name:  Notification.Name("pressToGroup"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(didPressToGroup(_:)), name:  Notification.Name("pressToGroup"), object: nil)
     }
     
     @objc func didPressToGroup(_ notification:Notification){
