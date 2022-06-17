@@ -58,24 +58,50 @@
                                                     <action selector="loginButPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53y-V3-Nvw"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53a-GG-9Pa">
+                                                <rect key="frame" x="151.66666666666666" y="285.00000000000006" width="35" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aph-xa-3i6">
+                                                <rect key="frame" x="241.66666666666663" y="285.00000000000006" width="35" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rx7-bD-NhK">
+                                                <rect key="frame" x="196.66666666666666" y="285.00000000000006" width="35" height="36"/>
+                                                <color key="backgroundColor" systemColor="tintColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="cse-Rw-CAb"/>
+                                                    <constraint firstAttribute="width" constant="35" id="d4V-Bj-Gyy"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xcU-16-BjL" secondAttribute="trailing" constant="20" symbolic="YES" id="2WU-9r-M6Q"/>
+                                            <constraint firstItem="rx7-bD-NhK" firstAttribute="leading" secondItem="53a-GG-9Pa" secondAttribute="trailing" constant="10" id="3EC-9S-sm5"/>
                                             <constraint firstItem="n4g-TC-nc3" firstAttribute="top" secondItem="EUl-1S-2cC" secondAttribute="bottom" constant="79" id="5NZ-9n-o1M"/>
+                                            <constraint firstItem="rx7-bD-NhK" firstAttribute="top" secondItem="PWm-cF-JiM" secondAttribute="bottom" constant="20" id="6oi-70-e6J"/>
+                                            <constraint firstItem="rx7-bD-NhK" firstAttribute="centerX" secondItem="PWm-cF-JiM" secondAttribute="centerX" id="8ob-1Q-mdp"/>
                                             <constraint firstItem="xcU-16-BjL" firstAttribute="leading" secondItem="BhE-Jn-O3k" secondAttribute="leading" id="9Gk-jO-7Ao"/>
                                             <constraint firstItem="PWm-cF-JiM" firstAttribute="centerX" secondItem="sx0-Zn-CkG" secondAttribute="centerX" id="9TS-ic-L6n"/>
                                             <constraint firstItem="EUl-1S-2cC" firstAttribute="leading" secondItem="sx0-Zn-CkG" secondAttribute="leading" constant="20" id="9Ux-5r-4kW"/>
+                                            <constraint firstItem="Aph-xa-3i6" firstAttribute="leading" secondItem="rx7-bD-NhK" secondAttribute="trailing" constant="10" id="Gh3-hZ-eQj"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EUl-1S-2cC" secondAttribute="trailing" constant="20" symbolic="YES" id="Gs9-pi-f7j"/>
+                                            <constraint firstItem="53a-GG-9Pa" firstAttribute="centerY" secondItem="rx7-bD-NhK" secondAttribute="centerY" id="I2Y-a1-oPy"/>
                                             <constraint firstItem="xcU-16-BjL" firstAttribute="top" secondItem="BhE-Jn-O3k" secondAttribute="bottom" constant="53" id="K4J-WN-DmY"/>
                                             <constraint firstItem="EUl-1S-2cC" firstAttribute="top" secondItem="sx0-Zn-CkG" secondAttribute="top" constant="10" id="K83-Rj-dbx"/>
+                                            <constraint firstItem="Aph-xa-3i6" firstAttribute="width" secondItem="rx7-bD-NhK" secondAttribute="width" id="LDV-N5-Lla"/>
+                                            <constraint firstItem="53a-GG-9Pa" firstAttribute="width" secondItem="rx7-bD-NhK" secondAttribute="width" id="MYy-PH-HO8"/>
+                                            <constraint firstItem="53a-GG-9Pa" firstAttribute="height" secondItem="rx7-bD-NhK" secondAttribute="height" id="Ms4-rM-avU"/>
                                             <constraint firstAttribute="trailing" secondItem="BhE-Jn-O3k" secondAttribute="trailing" constant="20" symbolic="YES" id="N5b-hK-1PN"/>
                                             <constraint firstItem="BhE-Jn-O3k" firstAttribute="leading" secondItem="EUl-1S-2cC" secondAttribute="leading" id="PoJ-1U-jbz"/>
                                             <constraint firstItem="xcU-16-BjL" firstAttribute="top" secondItem="n4g-TC-nc3" secondAttribute="bottom" constant="15" id="TEK-jJ-y4c"/>
+                                            <constraint firstItem="Aph-xa-3i6" firstAttribute="centerY" secondItem="rx7-bD-NhK" secondAttribute="centerY" id="Wmr-Yg-pWA"/>
                                             <constraint firstItem="BhE-Jn-O3k" firstAttribute="top" secondItem="EUl-1S-2cC" secondAttribute="bottom" constant="15" id="XBF-l1-N5F"/>
                                             <constraint firstItem="PWm-cF-JiM" firstAttribute="top" secondItem="xcU-16-BjL" secondAttribute="bottom" constant="60" id="XQp-Nb-Jpj"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n4g-TC-nc3" secondAttribute="trailing" constant="20" symbolic="YES" id="Xve-GQ-Eyk"/>
                                             <constraint firstItem="n4g-TC-nc3" firstAttribute="leading" secondItem="EUl-1S-2cC" secondAttribute="leading" id="jZ7-qT-ZQG"/>
+                                            <constraint firstItem="Aph-xa-3i6" firstAttribute="height" secondItem="rx7-bD-NhK" secondAttribute="height" id="lZa-x2-yPM"/>
                                             <constraint firstAttribute="height" constant="800" id="rwt-Le-It2"/>
                                             <constraint firstItem="xcU-16-BjL" firstAttribute="width" secondItem="BhE-Jn-O3k" secondAttribute="width" id="ugk-2c-dqY"/>
                                         </constraints>
@@ -115,7 +141,10 @@
                     </view>
                     <connections>
                         <outlet property="buttonEnter" destination="PWm-cF-JiM" id="YZK-0L-OHO"/>
+                        <outlet property="firstView" destination="53a-GG-9Pa" id="UWs-BE-Muv"/>
                         <outlet property="loginField" destination="xcU-16-BjL" id="LTQ-dL-JPk"/>
+                        <outlet property="secondView" destination="rx7-bD-NhK" id="CWW-8q-4Vx"/>
+                        <outlet property="thirdView" destination="Aph-xa-3i6" id="pVx-IQ-aOF"/>
                         <outlet property="userNameField" destination="BhE-Jn-O3k" id="sIt-Aa-heN"/>
                         <segue destination="2am-6z-nlu" kind="presentation" identifier="ToTabBarController" destinationCreationSelector="toBar:" modalPresentationStyle="fullScreen" id="tVf-Sq-tP9"/>
                     </connections>
@@ -330,6 +359,15 @@
         <image name="vkLogo" width="154" height="150"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
