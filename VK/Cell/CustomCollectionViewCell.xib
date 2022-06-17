@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,18 +18,28 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CoQ-tF-aEB">
-                        <rect key="frame" x="43" y="42" width="243" height="243"/>
+                        <rect key="frame" x="107" y="44" width="115" height="115"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="115" id="LzT-xF-eyS"/>
                             <constraint firstAttribute="width" secondItem="CoQ-tF-aEB" secondAttribute="height" multiplier="1:1" id="aJe-vU-Hu9"/>
+                            <constraint firstAttribute="height" constant="115" id="iYI-G8-xbX"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UM-Ve-jXg" customClass="LikeViewController" customModule="VK" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="159" width="329" height="168"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="CoQ-tF-aEB" secondAttribute="top" constant="2" id="8BX-Wv-jg4"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="CoQ-tF-aEB" secondAttribute="top" id="8BX-Wv-jg4"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="7UM-Ve-jXg" secondAttribute="trailing" id="Ik0-Ej-Mgp"/>
+                <constraint firstItem="7UM-Ve-jXg" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="Nby-Ve-pSF"/>
+                <constraint firstItem="7UM-Ve-jXg" firstAttribute="top" secondItem="CoQ-tF-aEB" secondAttribute="bottom" id="YHT-TC-esd"/>
+                <constraint firstItem="7UM-Ve-jXg" firstAttribute="top" secondItem="CoQ-tF-aEB" secondAttribute="bottom" id="a6S-MO-djY"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="7UM-Ve-jXg" secondAttribute="bottom" id="jJz-2K-pSl"/>
                 <constraint firstItem="CoQ-tF-aEB" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="rof-ad-o7h"/>
-                <constraint firstItem="CoQ-tF-aEB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="wFv-MA-Itn"/>
             </constraints>
             <size key="customSize" width="329" height="327"/>
             <connections>
@@ -37,4 +48,9 @@
             <point key="canvasLocation" x="-63.04347826086957" y="15.736607142857142"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

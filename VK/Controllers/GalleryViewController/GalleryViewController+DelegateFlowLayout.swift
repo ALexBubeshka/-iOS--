@@ -1,7 +1,7 @@
 
 import UIKit
 
-extension MyGroupsController: UICollectionViewDelegateFlowLayout {
+extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -9,7 +9,7 @@ extension MyGroupsController: UICollectionViewDelegateFlowLayout {
         let whiteSpeces:CGFloat = 20
         let cellWidth =  width / 3 - whiteSpeces
         
-      return  CGSize (width: cellWidth, height: cellWidth)
+      return  CGSize (width: cellWidth, height: cellWidth + 20)
 
     }
 }

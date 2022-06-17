@@ -27,5 +27,18 @@ class CustomTableViewCell: UITableViewCell {
         fotoImageVIew.image = image
         NameLabel.text = name
         descriptionLabel.text = discriprion
+        fotoImageVIew.layer.cornerRadius = 53
+        fotoImageVIew.layer.shadowColor = UIColor.black.cgColor
+        fotoImageVIew.layer.shadowOffset = CGSize(width: 20, height: 10)
+        fotoImageVIew.layer.shadowRadius = 2
+        fotoImageVIew.layer.shadowOpacity = 0.7
+        
     }
+    func configure (_ group: Group){
+        fotoImageVIew.image = UIImage(named: group.avatar)
+        NameLabel.text = group.name
+        descriptionLabel.text = group.description
+      
+    }
+    
 }
