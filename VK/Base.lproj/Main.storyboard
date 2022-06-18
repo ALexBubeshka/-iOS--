@@ -143,9 +143,13 @@
                         <outlet property="buttonEnter" destination="PWm-cF-JiM" id="YZK-0L-OHO"/>
                         <outlet property="firstView" destination="53a-GG-9Pa" id="UWs-BE-Muv"/>
                         <outlet property="loginField" destination="xcU-16-BjL" id="LTQ-dL-JPk"/>
+                        <outlet property="nameLabel" destination="EUl-1S-2cC" id="vab-PM-kZW"/>
+                        <outlet property="passwordLabel" destination="n4g-TC-nc3" id="7qg-xF-EcT"/>
                         <outlet property="secondView" destination="rx7-bD-NhK" id="CWW-8q-4Vx"/>
                         <outlet property="thirdView" destination="Aph-xa-3i6" id="pVx-IQ-aOF"/>
                         <outlet property="userNameField" destination="BhE-Jn-O3k" id="sIt-Aa-heN"/>
+                        <outlet property="vkImage" destination="VDo-vj-t02" id="kwp-as-gci"/>
+                        <outlet property="vkLabel" destination="l6a-r9-Fdc" id="raE-6d-QS0"/>
                         <segue destination="2am-6z-nlu" kind="presentation" identifier="ToTabBarController" destinationCreationSelector="toBar:" modalPresentationStyle="fullScreen" id="tVf-Sq-tP9"/>
                     </connections>
                 </viewController>

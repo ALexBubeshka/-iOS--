@@ -8,6 +8,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var vkImage: UIImageView!
+    @IBOutlet weak var vkLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var buttonEnter: UIButton!
@@ -16,6 +20,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var thirdView: UIView!
     
     
+
     
     
     
@@ -24,15 +29,8 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        UIView.animate(withDuration: 1,
-                       delay: 0,
-                       options: [.repeat, .autoreverse]){ [weak self] in
-            guard let self = self else {return}
-            self.buttonEnter.alpha = 0.6
-        } completion: { _ in
-    }
-}
+
+  }
     
 
     override func viewDidLoad() {
@@ -93,22 +91,86 @@ class MainViewController: UIViewController {
         self.view.endEditing(true)
     }
         
+//  другой вариант который тоже не работает)
+//    func frr () {
+//        UIView.animate(withDuration: 3,
+//                       animations: { [weak self] in
+//
+//            let animate1 = CABasicAnimation.init(keyPath: "position.x")
+//            animate1.toValue = -700
+//            animate1.duration = 3
+//            animate1.beginTime = CACurrentMediaTime() + 1
+//            self?.loginField.layer.add(animate1, forKey: nil)
+//            self?.passwordLabel.layer.add(animate1, forKey: nil)
+//
+//            let animate2 = CABasicAnimation.init(keyPath: "position.x")
+//            animate2.toValue = 700
+//            animate2.duration = 2
+//            animate2.beginTime = CACurrentMediaTime()
+//           self?.userNameField.layer.add(animate2, forKey: nil)
+//            self?.nameLabel.layer.add(animate2, forKey: nil)
+//
+//
+//            let animate3 = CABasicAnimation.init(keyPath: "position.y")
+//            animate3.toValue = -700
+//            animate3.duration = 2
+//            animate3.beginTime = CACurrentMediaTime()
+//            self?.vkImage.layer.add(animate3, forKey: nil)
+//            self?.vkLabel.layer.add(animate3, forKey: nil)
+//
+//            let animate4 = CABasicAnimation.init(keyPath: "position.y")
+//            animate4.toValue = 700
+//            animate4.duration = 2
+//            animate4.beginTime = CACurrentMediaTime()
+//            self?.buttonEnter.layer.add(animate4, forKey: nil)
+//
+//        },completion: { [weak self] _ in self?.performSegue(withIdentifier: self!.ToTabBarController, sender: nil) })
+//    }
+
     @IBAction func loginButPress(_ sender: UIButton) {
+        
 
         if let login = userNameField.text, login == "user", let password = loginField.text, password == "1111" {
-        userNameField.backgroundColor = UIColor.green
-        loginField.backgroundColor = UIColor.green
-        performSegue(withIdentifier: ToTabBarController, sender: nil)
+            
+            let animate1 = CABasicAnimation.init(keyPath: "position.x")
+            animate1.toValue = -700
+            animate1.duration = 3
+            animate1.beginTime = CACurrentMediaTime() + 1
+            loginField.layer.add(animate1, forKey: nil)
+            passwordLabel.layer.add(animate1, forKey: nil)
+
+            let animate2 = CABasicAnimation.init(keyPath: "position.x")
+            animate2.toValue = 700
+            animate2.duration = 2
+            animate2.beginTime = CACurrentMediaTime()
+           userNameField.layer.add(animate2, forKey: nil)
+            nameLabel.layer.add(animate2, forKey: nil)
+
+
+            let animate3 = CABasicAnimation.init(keyPath: "position.y")
+            animate3.toValue = -700
+            animate3.duration = 2
+            animate3.beginTime = CACurrentMediaTime()
+            vkImage.layer.add(animate3, forKey: nil)
+            vkLabel.layer.add(animate3, forKey: nil)
+
+            let animate4 = CABasicAnimation.init(keyPath: "position.y")
+            animate4.toValue = 700
+            animate4.duration = 2
+            animate4.beginTime = CACurrentMediaTime()
+            buttonEnter.layer.add(animate4, forKey: nil)
+
+      performSegue(withIdentifier: ToTabBarController, sender: nil)
+
     } else {
         let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
 }
     
-    
-    
-    
+}
 
-}
+
