@@ -165,24 +165,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hZe-UE-4fZ">
+                                <rect key="frame" x="0.0" y="88" width="428" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ub2-Na-wLi">
-                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="139" width="428" height="704"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dwc-yl-ZAp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ub2-Na-wLi" firstAttribute="leading" secondItem="dwc-yl-ZAp" secondAttribute="leading" id="2oJ-f7-sNB"/>
                             <constraint firstItem="dwc-yl-ZAp" firstAttribute="trailing" secondItem="Ub2-Na-wLi" secondAttribute="trailing" id="3yP-Om-Dal"/>
-                            <constraint firstItem="Ub2-Na-wLi" firstAttribute="top" secondItem="dwc-yl-ZAp" secondAttribute="top" id="93f-ym-3Li"/>
-                            <constraint firstItem="dwc-yl-ZAp" firstAttribute="trailing" secondItem="Ub2-Na-wLi" secondAttribute="trailing" id="GiL-x5-59u"/>
-                            <constraint firstItem="Ub2-Na-wLi" firstAttribute="top" secondItem="dwc-yl-ZAp" secondAttribute="top" id="PQa-J2-yei"/>
+                            <constraint firstItem="dwc-yl-ZAp" firstAttribute="trailing" secondItem="hZe-UE-4fZ" secondAttribute="trailing" id="5Q4-SB-dnq"/>
+                            <constraint firstItem="hZe-UE-4fZ" firstAttribute="top" secondItem="dwc-yl-ZAp" secondAttribute="top" id="AGc-Wn-NSQ"/>
+                            <constraint firstItem="hZe-UE-4fZ" firstAttribute="leading" secondItem="dwc-yl-ZAp" secondAttribute="leading" id="Fke-71-QD0"/>
+                            <constraint firstItem="hZe-UE-4fZ" firstAttribute="bottom" secondItem="Ub2-Na-wLi" secondAttribute="top" id="PQo-FC-0rH"/>
                             <constraint firstItem="dwc-yl-ZAp" firstAttribute="bottom" secondItem="Ub2-Na-wLi" secondAttribute="bottom" id="Zeb-Wr-mwl"/>
-                            <constraint firstItem="Ub2-Na-wLi" firstAttribute="leading" secondItem="dwc-yl-ZAp" secondAttribute="leading" id="wlw-eZ-Aqm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4GU-ly-N9V"/>
                     <connections>
+                        <outlet property="searchBar" destination="hZe-UE-4fZ" id="qUq-nA-FAU"/>
                         <outlet property="tableView" destination="Ub2-Na-wLi" id="UlW-CK-CCU"/>
                         <segue destination="CmC-lh-T9o" kind="show" identifier="fromFriendsListToGallery" id="9pI-4G-jIe"/>
                     </connections>

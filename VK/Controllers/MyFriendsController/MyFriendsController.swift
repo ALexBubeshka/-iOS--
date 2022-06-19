@@ -3,6 +3,7 @@ import UIKit
 
 class MyFriendsController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     let fromFriendsListToGallery = "fromFriendsListToGallery"
@@ -20,6 +21,9 @@ class MyFriendsController: UIViewController {
         return friendsArray
     }
     
+  
+    
+    var sourceFriends = [Friend]()
     var myFriends = [Friend]()
     
     override func viewDidLoad() {
@@ -27,10 +31,11 @@ class MyFriendsController: UIViewController {
         super.viewDidLoad()
 
         myFriends = fillData()
-        
+        sourceFriends = myFriends
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: CustomTableViewReuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
         
         
     }
@@ -42,3 +47,18 @@ class MyFriendsController: UIViewController {
         }
     }
 }
+extension MyFriendsController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText .isEmpty {
+            myFriends = sourceFriends
+        } else {
+            myFriends = sourceFriends.filter({ friendItem in
+                friendItem.name.lowercased().contains(searchText.lowercased())
+            })
+        }
+        
+        
+        tableView.reloadData()
+    }
+}
+
