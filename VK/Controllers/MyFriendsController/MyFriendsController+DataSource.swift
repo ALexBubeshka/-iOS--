@@ -9,7 +9,7 @@ extension MyFriendsController: UITableViewDataSource {
         
         let friend = myFriends[indexPath.row]
         cell.configure(image: UIImage(named: friend.avatar!), name: friend.name, discriprion: friend.age)
-    
+        
         return cell
     }
     

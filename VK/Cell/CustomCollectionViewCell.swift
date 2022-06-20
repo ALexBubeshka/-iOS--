@@ -18,6 +18,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     func configure (image: UIImage?) {
         fotoImageView.image = image
+        
     }
 
 }
