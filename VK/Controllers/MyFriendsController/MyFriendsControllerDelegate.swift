@@ -16,11 +16,11 @@ extension MyFriendsController: UITableViewDelegate {
 
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let fotos = myFriends[indexPath.row].fotoAlbum
-        performSegue(withIdentifier: fromFriendsListToGallery, sender: fotos)
-       
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        let fotos = myFriends[indexPath.row].fotoAlbum
+//        performSegue(withIdentifier: fromFriendsListToGallery, sender: fotos)
+//       
+//    }
     
 }
