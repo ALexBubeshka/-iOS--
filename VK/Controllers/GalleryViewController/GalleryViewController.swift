@@ -8,8 +8,11 @@ class GalleryViewController: UIViewController {
 
     var fotoAlbum = [String]()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         collectionView.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: customCollectionViewCell)
         
@@ -19,6 +22,6 @@ class GalleryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
+        
     }
-
 }

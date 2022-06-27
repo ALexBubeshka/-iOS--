@@ -15,7 +15,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var shadowView: UIView!
     
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

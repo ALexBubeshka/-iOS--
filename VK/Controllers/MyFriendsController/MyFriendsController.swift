@@ -21,8 +21,6 @@ class MyFriendsController: UIViewController {
         return friendsArray
     }
     
-  
-    
     var sourceFriends = [Friend]()
     var myFriends = [Friend]()
     

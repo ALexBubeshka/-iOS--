@@ -41,12 +41,24 @@ import UIKit
         if isPressed {
             counter += 1
             heartImageView.image = UIImage(systemName: "heart.fill")
+            
+            let animate = CABasicAnimation.init(keyPath: "bounds.size")
+            animate.autoreverses = true
+            animate.toValue = CGSize(width: 20, height: 20)
+            animate.duration = 0.5
+            heartImageView.layer.add(animate, forKey: nil)
+           
         } else {
             counter -= 1
-            heartImageView.image = UIImage(systemName: "heart")
+           heartImageView.image = UIImage(systemName: "heart")
+
+            let animate = CABasicAnimation.init(keyPath: "bounds.size")
+            animate.autoreverses = true
+            animate.toValue = CGSize(width: 20, height: 20)
+            animate.duration = 0.5
+            heartImageView.layer.add(animate, forKey: nil)
+         
         }
         counterLabel.text = String(counter)
     }
-    
-   
 }
