@@ -24,4 +24,7 @@ class GalleryViewController: UIViewController {
         collectionView.reloadData()
         
     }
+    
+    
+    
 }
