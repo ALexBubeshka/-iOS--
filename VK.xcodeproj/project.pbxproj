@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142F1C9F286E1DD50049ACD2 /* ScrollGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */; };
+		142F1CA1286E1DF90049ACD2 /* ScrollGalleryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */; };
+		142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1CA2286E1F8E0049ACD2 /* ViewController.swift */; };
 		14543780284F620100B12BDE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454377F284F620100B12BDE /* GalleryViewController.swift */; };
 		14623754284E717100AD9411 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14623752284E717100AD9411 /* CustomCollectionViewCell.swift */; };
 		14623755284E717100AD9411 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14623753284E717100AD9411 /* CustomCollectionViewCell.xib */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollGalleryController.swift; sourceTree = "<group>"; };
+		142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollGalleryController.xib; sourceTree = "<group>"; };
+		142F1CA2286E1F8E0049ACD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1454377F284F620100B12BDE /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		14623752284E717100AD9411 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		14623753284E717100AD9411 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -79,10 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142F1C9D286E1D660049ACD2 /* ScrollGalleryController */ = {
+			isa = PBXGroup;
+			children = (
+				142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */,
+				142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */,
+				142F1CA2286E1F8E0049ACD2 /* ViewController.swift */,
+			);
+			path = ScrollGalleryController;
+			sourceTree = "<group>";
+		};
 		14623759284E81B800AD9411 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				1490B5A6283AA88D009F1B66 /* MainViewController.swift */,
+				142F1C9D286E1D660049ACD2 /* ScrollGalleryController */,
 				1463A33C285097EF006BF78A /* MyGroupViewController */,
 				1463A33728509769006BF78A /* AllGroupViewController */,
 				1463A33028509638006BF78A /* GalleryViewController */,
@@ -266,6 +283,7 @@
 				14C119D3284A21A100C8FBCD /* CustomTableViewCell.xib in Resources */,
 				14623755284E717100AD9411 /* CustomCollectionViewCell.xib in Resources */,
 				1490B598283AA702009F1B66 /* Main.storyboard in Resources */,
+				142F1CA1286E1DF90049ACD2 /* ScrollGalleryController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +301,7 @@
 				1463A33B285097A2006BF78A /* AllGroupViewController+Delegate.swift in Sources */,
 				14C119D2284A21A100C8FBCD /* CustomTableViewCell.swift in Sources */,
 				14623754284E717100AD9411 /* CustomCollectionViewCell.swift in Sources */,
+				142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */,
 				1463A336285096FA006BF78A /* GalleryViewController+DelegateFlowLayout.swift in Sources */,
 				1463A33228509678006BF78A /* GalleryViewController+DataSource.swift in Sources */,
 				1490B591283AA702009F1B66 /* AppDelegate.swift in Sources */,
@@ -295,6 +314,7 @@
 				14C119CE284A17D600C8FBCD /* MyFriendsController.swift in Sources */,
 				14D42D6A284F84EC00000518 /* AllGroupViewController.swift in Sources */,
 				1490B5A7283AA88D009F1B66 /* MainViewController.swift in Sources */,
+				142F1C9F286E1DD50049ACD2 /* ScrollGalleryController.swift in Sources */,
 				14C119CA284A162400C8FBCD /* Friend.swift in Sources */,
 				14543780284F620100B12BDE /* GalleryViewController.swift in Sources */,
 			);

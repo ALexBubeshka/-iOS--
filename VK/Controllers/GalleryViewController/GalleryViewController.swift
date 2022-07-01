@@ -5,9 +5,10 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let customCollectionViewCell = "CustomCollectionViewCellReuseIdentifier"
-
+    let fromGalleryViewController = "fromGalleryViewController"
+   
     var fotoAlbum = [String]()
-    
+    var fotoFriendsImages = [UIImage]()
     
     
     override func viewDidLoad() {
