@@ -8,7 +8,11 @@ extension MyFriendsController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewReuseIdentifier, for: indexPath) as? CustomTableViewCell else { return UITableViewCell()}
         
         let friend = myFriends[indexPath.row]
-        cell.configure(image: UIImage(named: friend.avatar!), name: friend.name, discriprion: friend.age)
+        cell.configureOne (image: UIImage(named: friend.avatar!), name: friend.name, discriprion: friend.age, closure: { [weak self] in
+            guard let self = self else {return}
+            let fotos = self.myFriends[indexPath.row].fotoAlbum
+            self.performSegue(withIdentifier: self.fromFriendsListToGallery, sender: fotos)
+        })
         
         return cell
     }
@@ -17,3 +21,5 @@ extension MyFriendsController: UITableViewDataSource {
         return myFriends.count
     }
 }
+
+

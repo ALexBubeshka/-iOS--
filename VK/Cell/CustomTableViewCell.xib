@@ -39,14 +39,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXX-XR-HEd">
+                        <rect key="frame" x="11" y="5" width="96" height="96"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="pressImageView:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lwX-Tv-kDh"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="naT-8y-CKc" firstAttribute="leading" secondItem="YUX-M1-dUf" secondAttribute="leading" id="1bg-f0-Nkt"/>
                     <constraint firstAttribute="centerY" secondItem="YUX-M1-dUf" secondAttribute="bottom" id="2rD-uu-cki"/>
                     <constraint firstAttribute="trailing" secondItem="YUX-M1-dUf" secondAttribute="trailing" constant="16" id="6cj-Xb-ieC"/>
                     <constraint firstItem="naT-8y-CKc" firstAttribute="trailing" secondItem="YUX-M1-dUf" secondAttribute="trailing" id="7pJ-4g-HWp"/>
+                    <constraint firstItem="qXX-XR-HEd" firstAttribute="centerY" secondItem="psm-nd-prd" secondAttribute="centerY" id="A9Y-AN-Nm9"/>
+                    <constraint firstItem="qXX-XR-HEd" firstAttribute="centerX" secondItem="psm-nd-prd" secondAttribute="centerX" id="CHP-7F-e2E"/>
                     <constraint firstItem="bH7-OO-0PS" firstAttribute="bottom" secondItem="psm-nd-prd" secondAttribute="bottom" id="DQe-O2-LnZ"/>
                     <constraint firstItem="psm-nd-prd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Kt4-SW-BMx"/>
+                    <constraint firstItem="qXX-XR-HEd" firstAttribute="width" secondItem="psm-nd-prd" secondAttribute="width" id="RN3-gm-onx"/>
                     <constraint firstItem="bH7-OO-0PS" firstAttribute="top" secondItem="psm-nd-prd" secondAttribute="top" id="UwG-b1-Gzw"/>
                     <constraint firstItem="bH7-OO-0PS" firstAttribute="trailing" secondItem="psm-nd-prd" secondAttribute="trailing" id="XAS-aB-ECI"/>
                     <constraint firstItem="YUX-M1-dUf" firstAttribute="leading" secondItem="psm-nd-prd" secondAttribute="trailing" constant="20" id="efC-8d-4Ou"/>
@@ -54,6 +65,7 @@
                     <constraint firstItem="psm-nd-prd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="gzk-vI-hyr"/>
                     <constraint firstItem="naT-8y-CKc" firstAttribute="top" secondItem="YUX-M1-dUf" secondAttribute="bottom" constant="2" id="i9p-ws-ZXp"/>
                     <constraint firstItem="bH7-OO-0PS" firstAttribute="leading" secondItem="psm-nd-prd" secondAttribute="leading" id="oB0-Ox-xFT"/>
+                    <constraint firstItem="qXX-XR-HEd" firstAttribute="height" secondItem="psm-nd-prd" secondAttribute="height" id="oaS-rT-G8N"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -5,11 +5,15 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let customCollectionViewCell = "CustomCollectionViewCellReuseIdentifier"
-
+    let fromGalleryViewController = "fromGalleryViewController"
+   
     var fotoAlbum = [String]()
+    var fotoFriendsImages = [UIImage]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         collectionView.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: customCollectionViewCell)
         
@@ -19,6 +23,9 @@ class GalleryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
+        
     }
-
+    
+    
+    
 }

@@ -229,11 +229,43 @@
                     <navigationItem key="navigationItem" id="yWz-0Q-oZe"/>
                     <connections>
                         <outlet property="collectionView" destination="F9y-SN-MOo" id="kPL-R9-OIN"/>
+                        <segue destination="L1e-eo-hbw" kind="show" identifier="fromGalleryViewController" id="I3C-cg-DET"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vh7-8n-lYD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2961" y="-248"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="J9F-Se-WJ7">
+            <objects>
+                <viewController id="L1e-eo-hbw" customClass="ViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="osC-Wn-jli">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIG-2u-1AL" customClass="ScrollGalleryController" customModule="VK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9PD-a0-jdI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9PD-a0-jdI" firstAttribute="trailing" secondItem="uIG-2u-1AL" secondAttribute="trailing" id="8Ig-nu-vVv"/>
+                            <constraint firstItem="9PD-a0-jdI" firstAttribute="bottom" secondItem="uIG-2u-1AL" secondAttribute="bottom" id="A1X-at-zyP"/>
+                            <constraint firstItem="uIG-2u-1AL" firstAttribute="top" secondItem="9PD-a0-jdI" secondAttribute="top" id="Bid-Pm-bd0"/>
+                            <constraint firstItem="uIG-2u-1AL" firstAttribute="leading" secondItem="9PD-a0-jdI" secondAttribute="leading" id="cms-L9-aSV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VEk-ep-t9P"/>
+                    <connections>
+                        <outlet property="galleryView" destination="uIG-2u-1AL" id="KD3-r1-q83"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUo-54-hik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3739" y="-248"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oPx-C7-o6c">
