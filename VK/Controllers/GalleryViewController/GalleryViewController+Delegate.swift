@@ -1,13 +1,6 @@
 
 import UIKit
 
-
-
-
-  
-   
-
-
 extension GalleryViewController: UICollectionViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -21,13 +14,8 @@ extension GalleryViewController: UICollectionViewDelegate {
             destination.imageGallerySelectedIndexPath = imageGallerySelectedIndexPath
             destination.imageGalleryFoto = fotoFriendsImages
             fotoFriendsImages = []
-
-
         }
-  
     }
-    
-    
     
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          print(indexPath.item)
