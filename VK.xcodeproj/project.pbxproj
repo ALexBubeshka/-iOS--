@@ -28,6 +28,9 @@
 		1490B59A283AA705009F1B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490B599283AA705009F1B66 /* Assets.xcassets */; };
 		1490B59D283AA705009F1B66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490B59B283AA705009F1B66 /* LaunchScreen.storyboard */; };
 		1490B5A7283AA88D009F1B66 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490B5A6283AA88D009F1B66 /* MainViewController.swift */; };
+		14B3ABD82870D5450075E17A /* MyFriendsController+NavControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3ABD72870D5450075E17A /* MyFriendsController+NavControlDelegate.swift */; };
+		14B3ABDA2870D6E80075E17A /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3ABD92870D6E80075E17A /* Animator.swift */; };
+		14B3ABDC2870E1D80075E17A /* AnimatorBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3ABDB2870E1D80075E17A /* AnimatorBack.swift */; };
 		14C119CA284A162400C8FBCD /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C119C9284A162400C8FBCD /* Friend.swift */; };
 		14C119CE284A17D600C8FBCD /* MyFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C119CD284A17D600C8FBCD /* MyFriendsController.swift */; };
 		14C119D2284A21A100C8FBCD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C119D0284A21A100C8FBCD /* CustomTableViewCell.swift */; };
@@ -63,6 +66,9 @@
 		1490B59C283AA705009F1B66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1490B59E283AA705009F1B66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1490B5A6283AA88D009F1B66 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		14B3ABD72870D5450075E17A /* MyFriendsController+NavControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyFriendsController+NavControlDelegate.swift"; sourceTree = "<group>"; };
+		14B3ABD92870D6E80075E17A /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		14B3ABDB2870E1D80075E17A /* AnimatorBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorBack.swift; sourceTree = "<group>"; };
 		14C119C9284A162400C8FBCD /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		14C119CD284A17D600C8FBCD /* MyFriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsController.swift; sourceTree = "<group>"; };
 		14C119D0284A21A100C8FBCD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -113,8 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				14C119CD284A17D600C8FBCD /* MyFriendsController.swift */,
-				1462375D284E827500AD9411 /* MyFriendsController+DataSource.swift */,
 				1462375F284E835F00AD9411 /* MyFriendsControllerDelegate.swift */,
+				1462375D284E827500AD9411 /* MyFriendsController+DataSource.swift */,
+				14B3ABD72870D5450075E17A /* MyFriendsController+NavControlDelegate.swift */,
+				14B3ABD92870D6E80075E17A /* Animator.swift */,
+				14B3ABDB2870E1D80075E17A /* AnimatorBack.swift */,
 			);
 			path = MyFriendsController;
 			sourceTree = "<group>";
@@ -299,6 +308,7 @@
 				14EC82A9285B3EB0005F2AD5 /* LikeViewController.swift in Sources */,
 				14623760284E835F00AD9411 /* MyFriendsControllerDelegate.swift in Sources */,
 				1463A33B285097A2006BF78A /* AllGroupViewController+Delegate.swift in Sources */,
+				14B3ABDA2870D6E80075E17A /* Animator.swift in Sources */,
 				14C119D2284A21A100C8FBCD /* CustomTableViewCell.swift in Sources */,
 				14623754284E717100AD9411 /* CustomCollectionViewCell.swift in Sources */,
 				142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */,
@@ -314,8 +324,10 @@
 				14C119CE284A17D600C8FBCD /* MyFriendsController.swift in Sources */,
 				14D42D6A284F84EC00000518 /* AllGroupViewController.swift in Sources */,
 				1490B5A7283AA88D009F1B66 /* MainViewController.swift in Sources */,
+				14B3ABDC2870E1D80075E17A /* AnimatorBack.swift in Sources */,
 				142F1C9F286E1DD50049ACD2 /* ScrollGalleryController.swift in Sources */,
 				14C119CA284A162400C8FBCD /* Friend.swift in Sources */,
+				14B3ABD82870D5450075E17A /* MyFriendsController+NavControlDelegate.swift in Sources */,
 				14543780284F620100B12BDE /* GalleryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
