@@ -28,8 +28,9 @@ class CustomTableViewCell: UITableViewCell {
         fotoImageVIew.image = image
         NameLabel.text = name
         descriptionLabel.text = discriprion
-        fotoImageVIew.layer.cornerRadius = 53
-        shadowView.layer.cornerRadius = 53
+        fotoImageVIew.contentMode = .scaleAspectFill
+        fotoImageVIew.layer.cornerRadius = 15
+        shadowView.layer.cornerRadius = 15
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowOffset = CGSize(width: 7, height: 5)
         shadowView.layer.shadowRadius = 5
@@ -41,6 +42,7 @@ class CustomTableViewCell: UITableViewCell {
         NameLabel.text = name
         descriptionLabel.text = discriprion
         self.closure = closure
+        fotoImageVIew.contentMode = .scaleAspectFill
         fotoImageVIew.layer.cornerRadius = 53
         shadowView.layer.cornerRadius = 53
         shadowView.layer.shadowColor = UIColor.black.cgColor
@@ -52,6 +54,7 @@ class CustomTableViewCell: UITableViewCell {
     
     
     func configure (_ group: Group){
+        
         fotoImageVIew.image = UIImage(named: group.avatar)
         NameLabel.text = group.name
         descriptionLabel.text = group.description

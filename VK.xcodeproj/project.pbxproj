@@ -22,6 +22,7 @@
 		1463A33B285097A2006BF78A /* AllGroupViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463A33A285097A2006BF78A /* AllGroupViewController+Delegate.swift */; };
 		1463A33E28509812006BF78A /* MyGroupViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463A33D28509812006BF78A /* MyGroupViewController+DataSource.swift */; };
 		1463A34028509820006BF78A /* MyGroupViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463A33F28509820006BF78A /* MyGroupViewController+Delegate.swift */; };
+		146411612876EF330052B34C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146411602876EF330052B34C /* Session.swift */; };
 		1490B591283AA702009F1B66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490B590283AA702009F1B66 /* AppDelegate.swift */; };
 		1490B593283AA702009F1B66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490B592283AA702009F1B66 /* SceneDelegate.swift */; };
 		1490B598283AA702009F1B66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490B596283AA702009F1B66 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		1463A33A285097A2006BF78A /* AllGroupViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllGroupViewController+Delegate.swift"; sourceTree = "<group>"; };
 		1463A33D28509812006BF78A /* MyGroupViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyGroupViewController+DataSource.swift"; sourceTree = "<group>"; };
 		1463A33F28509820006BF78A /* MyGroupViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyGroupViewController+Delegate.swift"; sourceTree = "<group>"; };
+		146411602876EF330052B34C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		1490B58D283AA702009F1B66 /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1490B590283AA702009F1B66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1490B592283AA702009F1B66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		1464115F2876EF150052B34C /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				146411602876EF330052B34C /* Session.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
 		1490B584283AA701009F1B66 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		1490B58F283AA702009F1B66 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				1464115F2876EF150052B34C /* Singleton */,
 				1463A34228509993006BF78A /* Delegate */,
 				1463A34128509956006BF78A /* Structures */,
 				14C119CF284A212B00C8FBCD /* Cell */,
@@ -320,6 +331,7 @@
 				1463A34028509820006BF78A /* MyGroupViewController+Delegate.swift in Sources */,
 				14D42D6C284F863900000518 /* Group.swift in Sources */,
 				1463A334285096C5006BF78A /* GalleryViewController+Delegate.swift in Sources */,
+				146411612876EF330052B34C /* Session.swift in Sources */,
 				1462375E284E827500AD9411 /* MyFriendsController+DataSource.swift in Sources */,
 				14C119CE284A17D600C8FBCD /* MyFriendsController.swift in Sources */,
 				14D42D6A284F84EC00000518 /* AllGroupViewController.swift in Sources */,

@@ -27,7 +27,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RJ-gk-OJC">
-                    <rect key="frame" x="450" y="113" width="13" height="24"/>
+                    <rect key="frame" x="460.5" y="113" width="12.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3bK-by-5IN" secondAttribute="trailing" id="C94-ns-B3t"/>
                 <constraint firstItem="gaR-UN-veW" firstAttribute="centerY" secondItem="3bK-by-5IN" secondAttribute="centerY" id="Euk-5o-YuG"/>
                 <constraint firstItem="3bK-by-5IN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LOv-72-WOV"/>
-                <constraint firstItem="3bK-by-5IN" firstAttribute="leading" secondItem="4RJ-gk-OJC" secondAttribute="trailing" constant="20" id="VAd-tF-j4P"/>
+                <constraint firstItem="gaR-UN-veW" firstAttribute="leading" secondItem="4RJ-gk-OJC" secondAttribute="trailing" constant="10" id="MZM-9S-Tyx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3bK-by-5IN" secondAttribute="bottom" id="YKR-N2-FIa"/>
                 <constraint firstItem="gaR-UN-veW" firstAttribute="centerX" secondItem="3bK-by-5IN" secondAttribute="centerX" id="Yzq-Lc-5Gh"/>
                 <constraint firstItem="gaR-UN-veW" firstAttribute="width" secondItem="3bK-by-5IN" secondAttribute="width" id="ulV-mC-Pwf"/>

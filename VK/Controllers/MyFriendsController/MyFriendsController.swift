@@ -11,13 +11,16 @@ class MyFriendsController: UIViewController {
     let CustomTableViewReuseIdentifier = "CustomTableViewReuseIdentifier"
     
     func fillData() -> [Friend] {
-        let friend1 = Friend (name: "Вадим", age: "31", avatar: "Вадим", fotoAlbum:["Вадим"])
-        let friend2 = Friend (name: "Александр", age: "32", avatar: "Вадим1", fotoAlbum:["Вадим","Вадим1","Вадим2"])
+        let friend1 = Friend (name: "Вадим", age: "31", avatar: "Вадим", fotoAlbum:["Вадим","Вадим1"])
+        let friend2 = Friend (name: "Алена", age: "30", avatar: "Алена3", fotoAlbum:["Алена1","Алена2","Алена","Алена4","Алена5","Алена6","Алена7"])
         let friend3 = Friend (name: "Егор", age: "32", avatar: "Вадим2", fotoAlbum:["Вадим2"])
+        let friend4 = Friend (name: "Armin", age: "28", avatar: "armin", fotoAlbum:["armin1","armin2","armin3"])
+      
         var friendsArray = [Friend]()
         friendsArray.append(friend1)
         friendsArray.append(friend2)
         friendsArray.append(friend3)
+        friendsArray.append(friend4)
         return friendsArray
     }
     
