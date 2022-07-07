@@ -3,10 +3,10 @@ import Foundation
 
 class Session {
     
-    static let instance = Session()
-    
     private init (){}
     
+    static let instance = Session()
+
     var token: String = ""
     var userId: Int = 0
     
