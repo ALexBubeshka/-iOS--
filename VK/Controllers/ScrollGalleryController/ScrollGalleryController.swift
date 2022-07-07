@@ -14,13 +14,7 @@ class ScrollGalleryController: UIView {
     var activeIndicatorColor: UIColor = UIColor.black
    
    private var view: UIView?
-   
-   
    private var interactiveAnimator: UIViewPropertyAnimator!
-   
-   
-   
-   
    private var mainImageView = UIImageView() //UIView()
    private var secondaryImageView = UIImageView() //UIView()
    private var images = [UIImage]()

@@ -9,13 +9,21 @@ class AllGroupViewController: UIViewController {
     
     func fillData() -> [Group] {
         
-        let group1 = Group(name: "Шахматный клуб", description: "Гродно", avatar: "Вадим")
-        let group2 = Group(name: "Клуб бега", description: "Беларусь", avatar: "Вадим1")
-        let group3 = Group(name: "Триатлон", description: "Минск", avatar: "Вадим2")
+        let group1 = Group(name: "Шахматный клуб", description: "Гродно", avatar: "chess")
+        let group2 = Group(name: "Клуб любителей бега", description: "Беларусь", avatar: "run")
+        let group3 = Group(name: "Триатлон", description: "Минск", avatar: "Tri")
+        let group4 = Group(name: "Шахматы", description: "Минск", avatar: "chess1")
+        let group5 = Group(name: "Run", description: "Гродно", avatar: "run1")
+        let group6 = Group(name: "Triathlon", description: "Беларусь", avatar: "Tri1")
+        let group7 = Group(name: "Apple", description: "Москва", avatar: "apple")
         var groups = [Group]()
         groups.append(group1)
         groups.append(group2)
         groups.append(group3)
+        groups.append(group4)
+        groups.append(group5)
+        groups.append(group6)
+        groups.append(group7)
         return groups
     }
     
