@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14211FCF287D89E200A63D49 /* URLSessionNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14211FCE287D89E200A63D49 /* URLSessionNetworker.swift */; };
+		14211FD3287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14211FD2287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift */; };
 		142F1C9F286E1DD50049ACD2 /* ScrollGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */; };
 		142F1CA1286E1DF90049ACD2 /* ScrollGalleryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */; };
 		142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1CA2286E1F8E0049ACD2 /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14211FCE287D89E200A63D49 /* URLSessionNetworker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworker.swift; sourceTree = "<group>"; };
+		14211FD2287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollGalleryController.swift; sourceTree = "<group>"; };
 		142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollGalleryController.xib; sourceTree = "<group>"; };
 		142F1CA2286E1F8E0049ACD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14211FD1287D8DA000A63D49 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1490B5A6283AA88D009F1B66 /* MainViewController.swift */,
+				14211FD2287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
 		142F1C9D286E1D660049ACD2 /* ScrollGalleryController */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +119,7 @@
 		14623759284E81B800AD9411 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1490B5A6283AA88D009F1B66 /* MainViewController.swift */,
+				14211FD1287D8DA000A63D49 /* MainViewController */,
 				142F1C9D286E1D660049ACD2 /* ScrollGalleryController */,
 				1463A33C285097EF006BF78A /* MyGroupViewController */,
 				1463A33728509769006BF78A /* AllGroupViewController */,
@@ -183,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				146411602876EF330052B34C /* Session.swift */,
+				14211FCE287D89E200A63D49 /* URLSessionNetworker.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -322,6 +336,7 @@
 				14B3ABDA2870D6E80075E17A /* Animator.swift in Sources */,
 				14C119D2284A21A100C8FBCD /* CustomTableViewCell.swift in Sources */,
 				14623754284E717100AD9411 /* CustomCollectionViewCell.swift in Sources */,
+				14211FD3287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */,
 				1463A336285096FA006BF78A /* GalleryViewController+DelegateFlowLayout.swift in Sources */,
 				1463A33228509678006BF78A /* GalleryViewController+DataSource.swift in Sources */,
@@ -330,6 +345,7 @@
 				1463A33E28509812006BF78A /* MyGroupViewController+DataSource.swift in Sources */,
 				1463A34028509820006BF78A /* MyGroupViewController+Delegate.swift in Sources */,
 				14D42D6C284F863900000518 /* Group.swift in Sources */,
+				14211FCF287D89E200A63D49 /* URLSessionNetworker.swift in Sources */,
 				1463A334285096C5006BF78A /* GalleryViewController+Delegate.swift in Sources */,
 				146411612876EF330052B34C /* Session.swift in Sources */,
 				1462375E284E827500AD9411 /* MyFriendsController+DataSource.swift in Sources */,

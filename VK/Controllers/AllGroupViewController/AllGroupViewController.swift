@@ -5,6 +5,7 @@ class AllGroupViewController: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
+    let searchController = UISearchController(searchResultsController: nil)
     
     
     func fillData() -> [Group] {
@@ -28,16 +29,38 @@ class AllGroupViewController: UIViewController {
     }
     
     var groups = [Group]()
+    var groupsSearch = [Group]()
     
     let customTableViewCellReuse = "customTableViewCellReuse"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         groups = fillData()
+        groupsSearch = groups
+        setupSearchBar()
         
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: customTableViewCellReuse)
         tableView.dataSource = self
         tableView.delegate = self
        
+    }
+    
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
+    }
+    
+}
+
+extension AllGroupViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText .isEmpty {
+            groups = groupsSearch
+        } else {
+            groups = groupsSearch.filter({ groupItem in
+                groupItem.name.lowercased().contains(searchText.lowercased())
+            })
+        }
+        tableView.reloadData()
     }
 }

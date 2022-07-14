@@ -11,3 +11,4 @@ class Session {
     var userId: Int = 0
     
 }
+
