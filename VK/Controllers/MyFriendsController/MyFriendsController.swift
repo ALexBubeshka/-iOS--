@@ -57,8 +57,6 @@ extension MyFriendsController: UISearchBarDelegate {
                 friendItem.name.lowercased().contains(searchText.lowercased())
             })
         }
-        
-        
         tableView.reloadData()
     }
 }

@@ -11,15 +11,14 @@ class MyGroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        
+
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: customTableViewCellReuse)
         tableView.dataSource = self
         tableView.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(didPressToGroup(_:)), name:  Notification.Name("pressToGroup"), object: nil)
     }
-    
+   
     @objc func didPressToGroup(_ notification:Notification){
         
         guard let group = notification.object as? Group else { return }
@@ -42,8 +41,6 @@ class MyGroupViewController: UIViewController {
         }
     }
 }
-
-
 
 
 
