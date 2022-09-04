@@ -35,7 +35,7 @@ class MyFriendsController: UIViewController {
         sendGetRequestFrindsList()
         sendGetRequestPhotoList()
         sendGetRequestGroupsList()
-        sendGetRequestFindGroups()
+   
              
         self.navigationController?.delegate = self
 

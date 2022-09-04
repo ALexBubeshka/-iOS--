@@ -11,6 +11,9 @@
 		142F1C9F286E1DD50049ACD2 /* ScrollGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */; };
 		142F1CA1286E1DF90049ACD2 /* ScrollGalleryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */; };
 		142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1CA2286E1F8E0049ACD2 /* ViewController.swift */; };
+		14316D1528B51401006057A8 /* FriendsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14316D1428B51401006057A8 /* FriendsRealm.swift */; };
+		14316D1728B7D491006057A8 /* PhotoRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14316D1628B7D491006057A8 /* PhotoRealm.swift */; };
+		14316D1928C4E366006057A8 /* GroupsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14316D1828C4E366006057A8 /* GroupsRealm.swift */; };
 		14543780284F620100B12BDE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454377F284F620100B12BDE /* GalleryViewController.swift */; };
 		14623754284E717100AD9411 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14623752284E717100AD9411 /* CustomCollectionViewCell.swift */; };
 		14623755284E717100AD9411 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14623753284E717100AD9411 /* CustomCollectionViewCell.xib */; };
@@ -54,6 +57,9 @@
 		142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollGalleryController.swift; sourceTree = "<group>"; };
 		142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollGalleryController.xib; sourceTree = "<group>"; };
 		142F1CA2286E1F8E0049ACD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14316D1428B51401006057A8 /* FriendsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRealm.swift; sourceTree = "<group>"; };
+		14316D1628B7D491006057A8 /* PhotoRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRealm.swift; sourceTree = "<group>"; };
+		14316D1828C4E366006057A8 /* GroupsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsRealm.swift; sourceTree = "<group>"; };
 		1454377F284F620100B12BDE /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		14623752284E717100AD9411 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		14623753284E717100AD9411 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -209,6 +215,16 @@
 			path = Singleton;
 			sourceTree = "<group>";
 		};
+		146B757328A03304008E76A4 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				14316D1428B51401006057A8 /* FriendsRealm.swift */,
+				14316D1628B7D491006057A8 /* PhotoRealm.swift */,
+				14316D1828C4E366006057A8 /* GroupsRealm.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		1490B584283AA701009F1B66 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +246,7 @@
 		1490B58F283AA702009F1B66 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				146B757328A03304008E76A4 /* Realm */,
 				14A573882888714B00EE7EF3 /* JsonDecoder */,
 				1464115F2876EF150052B34C /* Singleton */,
 				1463A34228509993006BF78A /* Delegate */,
@@ -411,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14D42D68284F84D400000518 /* MyGroupViewController.swift in Sources */,
+				14316D1728B7D491006057A8 /* PhotoRealm.swift in Sources */,
 				1463A3392850978E006BF78A /* AllGroupViewController+DataSource.swift in Sources */,
 				14EC82A9285B3EB0005F2AD5 /* LikeViewController.swift in Sources */,
 				14623760284E835F00AD9411 /* MyFriendsControllerDelegate.swift in Sources */,
@@ -419,6 +437,7 @@
 				14C119D2284A21A100C8FBCD /* CustomTableViewCell.swift in Sources */,
 				14623754284E717100AD9411 /* CustomCollectionViewCell.swift in Sources */,
 				142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */,
+				14316D1528B51401006057A8 /* FriendsRealm.swift in Sources */,
 				1463A336285096FA006BF78A /* GalleryViewController+DelegateFlowLayout.swift in Sources */,
 				1463A33228509678006BF78A /* GalleryViewController+DataSource.swift in Sources */,
 				14A5738A288871A600EE7EF3 /* Getfriends.swift in Sources */,
@@ -427,6 +446,7 @@
 				14A57390288AC9C700EE7EF3 /* GetGroups.swift in Sources */,
 				1463A33E28509812006BF78A /* MyGroupViewController+DataSource.swift in Sources */,
 				1463A34028509820006BF78A /* MyGroupViewController+Delegate.swift in Sources */,
+				14316D1928C4E366006057A8 /* GroupsRealm.swift in Sources */,
 				14D42D6C284F863900000518 /* Group.swift in Sources */,
 				14211FCF287D89E200A63D49 /* URLSessionNetworker.swift in Sources */,
 				1463A334285096C5006BF78A /* GalleryViewController+Delegate.swift in Sources */,
