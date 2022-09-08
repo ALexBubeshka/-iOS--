@@ -6,6 +6,7 @@
 //
 import UIKit
 import WebKit
+import RealmSwift
 
 class MainViewController: UIViewController {
     
@@ -19,15 +20,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
-   
+    
     @IBOutlet weak var webview: WKWebView!
     
-override func viewDidLoad() {
+    override func viewDidLoad() {
         
         webview.navigationDelegate = self
         
         super.viewDidLoad()
-
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
@@ -65,11 +66,11 @@ extension MainViewController: WKNavigationDelegate {
             .components(separatedBy: "&")
             .map { $0.components(separatedBy: "=")}
             .reduce([String : String](), { partialResult, param in
-              var dict = partialResult
-              let key = param[0]
-              let value = param[1]
-              dict[key] = value
-              return dict
+                var dict = partialResult
+                let key = param[0]
+                let value = param[1]
+                dict[key] = value
+                return dict
             })
         guard
             let token = params["access_token"]
@@ -78,121 +79,144 @@ extension MainViewController: WKNavigationDelegate {
         Session.instance.token = token
         
         print(Session.instance.token)
-
-//        Подскажите как сделалть переход без Segue? Ниже код котрый выдает критическую ошибку
         
-    //    navigationController?.pushViewController(MyFriendsController(), animated: true)
-        
-
-       performSegue(withIdentifier: "ToTabBarController", sender: nil)
+        performSegue(withIdentifier: "ToTabBarController", sender: nil)
     }
-  
+    
 }
 
-  func sendGetRequestFrindsList() {
-
-  var components = URLComponents(string: "http://api.vk.com/method/friends.get")
-      components?.queryItems = [
-          URLQueryItem(name: "access_token", value: Session.instance.token),
-          URLQueryItem(name: "fields", value: "nickname"),
-          URLQueryItem(name: "order", value: "name"),
-          URLQueryItem(name: "v", value: "5.131")
-      ]
-
-      guard let url = components?.url else { return }
-
-      print (url)
-
-      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
-          guard let data = data else { return }
-
-          do {
-              let decoder = JSONDecoder()
-              let model = try decoder.decode(GetFriendsResponse.self, from: data)
-              print(model)
-          } catch {
-              print(error)
-          }
-      }.resume()
-  }
-
-  func sendGetRequestPhotoList() {
-
-  var components = URLComponents(string: "http://api.vk.com/method/photos.get")
-      components?.queryItems = [
-          URLQueryItem(name: "access_token", value: Session.instance.token),
-          URLQueryItem(name: "album_id", value: "profile"),
-          URLQueryItem(name: "v", value: "5.131")
-      ]
-
-      guard let url = components?.url else { return }
-
-      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
-          guard let data = data else { return }
-
-          do {
-              let decoder = JSONDecoder()
-              let model = try decoder.decode(GetPhotoResponse.self, from: data)
-              print(model)
-
-          } catch {
-              print(error)
-          }
-      }.resume()
-  
- }
-  func sendGetRequestGroupsList() {
-
-  var components = URLComponents(string: "http://api.vk.com/method/groups.get")
-      components?.queryItems = [
-          URLQueryItem(name: "access_token", value: Session.instance.token),
-          URLQueryItem(name: "extended", value: "1"),
-          URLQueryItem(name: "v", value: "5.131")
-      ]
-
-      guard let url = components?.url else { return }
-
-      print (url)
-      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
-          guard let data = data else { return }
+func sendGetRequestFrindsList() {
+    
+    var components = URLComponents(string: "http://api.vk.com/method/friends.get")
+    components?.queryItems = [
+        URLQueryItem(name: "access_token", value: Session.instance.token),
+        URLQueryItem(name: "fields", value: "name"),
+        URLQueryItem(name: "fields", value: "photo_200_orig"),
+        URLQueryItem(name: "v", value: "5.131")
+    ]
+    
+    guard let url = components?.url else { return }
+    
+    print (url)
+    
+    URLSession.shared.dataTask(with: url) { data, _, _  in
+        guard
+            let data = data,
+            let model = try? JSONDecoder().decode(GetFriendsResponse.self, from: data)
+        else { return }
         
-          do {
-              let decoder = JSONDecoder()
-              let model = try decoder.decode(GetGroupsResponse.self, from: data)
-              print(model)
-
-          } catch {
-              print(error)
-          }
-      }.resume()
-  }
-
-  func sendGetRequestFindGroups() {
-
-  var components = URLComponents(string: "http://api.vk.com/method/groups.search")
-      components?.queryItems = [
-          URLQueryItem(name: "access_token", value: Session.instance.token),
-          URLQueryItem(name: "q", value: "Music"),
-          URLQueryItem(name: "count", value: "1"),
-          URLQueryItem(name: "v", value: "5.131")
-      ]
-
-      guard let url = components?.url else { return }
-
-      print (url)
-      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
-          guard let data = data else { return }
-          
-          do {
-              let decoder = JSONDecoder()
-              let model = try decoder.decode(GetGroupsResponse.self, from: data)
-              print(model)
-
-          } catch {
-              print(error)
-          }
-          
-          let someString = String(data: data, encoding: .utf8)
-          print(someString ?? "no data")
-      }.resume()
+//        print(model)
+        
+        let friends = model.response.items
+        
+        let friendsRealm: [FriendsRealm] = friends.map { friend in
+            let friendsRealm = FriendsRealm()
+            friendsRealm.id = friend.id
+            friendsRealm.firstName = friend.firstName
+            friendsRealm.lastName = friend.lastName
+            friendsRealm.photo = friend.photo
+            
+            return friendsRealm
+        }
+        saveFriends(friends: friendsRealm)
+    }.resume()
 }
+private func saveFriends(friends: [FriendsRealm]) {
+    do {
+        let realm = try Realm()
+        try realm.write {
+            friends.forEach { realm.add($0)}
+        }
+    } catch {
+        print(error)
+    }
+}
+
+func sendGetRequestPhotoList() {
+    
+    var components = URLComponents(string: "http://api.vk.com/method/photos.get")
+    components?.queryItems = [
+        URLQueryItem(name: "access_token", value: Session.instance.token),
+        URLQueryItem(name: "owner_id", value: "13138774"),
+        URLQueryItem(name: "album_id", value: "profile"),
+        URLQueryItem(name: "v", value: "5.131")
+    ]
+    
+    guard let url = components?.url else { return }
+    
+    URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+        guard
+            let data = data,
+            let model = try? JSONDecoder().decode(GetPhotoResponse.self, from: data)
+        else { return }
+        
+//        print(model)
+        
+        let photosRealm: [RealmGetPhoto] = model.response.items.map { photos in
+            let photosRealm = RealmGetPhoto()
+            photosRealm.id = photos.id
+            
+            let sizeRealm: [RealmPhotoSizes] = photos.sizes.map { post in
+                let  sizeRealm = RealmPhotoSizes()
+                sizeRealm.url = post.url
+                return sizeRealm
+            }
+            photosRealm.sizes.append(objectsIn: sizeRealm)
+            return photosRealm
+        }
+        savePhotos(photosUrl: photosRealm)
+    }.resume()
+}
+private func savePhotos(photosUrl: [RealmGetPhoto]) {
+    do {
+        let realm = try Realm()
+        try realm.write {
+            photosUrl.forEach { realm.add($0)}
+            
+        }
+    } catch {
+        print(error)
+    }
+}
+
+func sendGetRequestGroupsList() {
+    
+    var components = URLComponents(string: "http://api.vk.com/method/groups.get")
+    components?.queryItems = [
+        URLQueryItem(name: "access_token", value: Session.instance.token),
+        URLQueryItem(name: "extended", value: "1"),
+        URLQueryItem(name: "v", value: "5.131")
+    ]
+    
+    guard let url = components?.url else { return }
+    
+    URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+        guard
+            let data = data,
+            let model = try?
+                JSONDecoder().decode(GetGroupsResponse.self, from: data)
+        else { return }
+        
+        let groupsRealm: [RealmGetGroups] = model.response.items.map { groups in
+            let groupsRealm = RealmGetGroups()
+            groupsRealm.id = groups.id
+            groupsRealm.name = groups.name
+            groupsRealm.photo200 = groups.photo200
+            
+            return groupsRealm
+        }
+        saveGroups(groups: groupsRealm)
+    }.resume()
+}
+private func saveGroups(groups: [RealmGetGroups]) {
+    do {
+        let realm = try Realm()
+        try realm.write {
+            groups.forEach { realm.add($0)}
+        }
+    } catch {
+        print(error)
+    }
+}
+
+
