@@ -6,6 +6,7 @@
 //
 import UIKit
 import WebKit
+import RealmSwift
 
 class MainViewController: UIViewController {
     
@@ -19,23 +20,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
-   
+    
     @IBOutlet weak var webview: WKWebView!
     
-//    let ToTabBarController = "ToTabBarController"
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//  }
-//
-//
     override func viewDidLoad() {
         
         webview.navigationDelegate = self
         
         super.viewDidLoad()
-
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
@@ -56,96 +49,174 @@ class MainViewController: UIViewController {
         webview.load(request)
     }
 }
-////        animationView()
-////        secondView.alpha = 0
-////        thirdView.alpha = 0
-////
-////        firstView.layer.cornerRadius = 18
-////        secondView.layer.cornerRadius = 18
-////        thirdView.layer.cornerRadius = 18
-////
-////        firstView.layer.shadowColor = UIColor.black.cgColor
-////        firstView.layer.shadowOffset = CGSize(width: 7, height: 5)
-////        firstView.layer.shadowRadius = 5
-////        firstView.layer.shadowOpacity = 0.5
-////
-////        secondView.layer.shadowColor = UIColor.black.cgColor
-////        secondView.layer.shadowOffset = CGSize(width: 7, height: 5)
-////        secondView.layer.shadowRadius = 5
-////        secondView.layer.shadowOpacity = 0.5
-////
-////        thirdView.layer.shadowColor = UIColor.black.cgColor
-////        thirdView.layer.shadowOffset = CGSize(width: 7, height: 5)
-////        thirdView.layer.shadowRadius = 5
-////        thirdView.layer.shadowOpacity = 0.5
-////
-////        let recognizer = UITapGestureRecognizer (target: self, action: #selector(onTap))
-////        view.addGestureRecognizer(recognizer)
-////
-//    }
-//
-//    func animationView() {
-//        UIView.animate(withDuration: 0.45) { [weak self] in
-//            self?.firstView.alpha = 0
-//            self?.secondView.alpha = 1
-//        } completion: { _ in
-//            UIView.animate(withDuration: 0.45) { [weak self] in
-//                self?.secondView.alpha = 0
-//                self?.thirdView.alpha = 1
-//            } completion: { _ in
-//                UIView.animate(withDuration: 0.45) { [weak self] in
-//                    self?.firstView.alpha = 1
-//                    self?.thirdView.alpha = 0
-//                } completion: { [weak self] _ in
-//                    self?.animationView()
-//                }
-//            }
-//        }
-//    }
-//
-//    @objc func onTap () {
-//        print("tap")
-//        self.view.endEditing(true)
-//    }
-//
-//    @IBAction func loginButPress(_ sender: UIButton) {
-//
-//        if let login = userNameField.text, login == "user", let password = loginField.text, password == "1111" {
-//
-//                let animate1 = CABasicAnimation.init(keyPath: "position.x")
-//                animate1.toValue = -700
-//                animate1.duration = 3
-//                loginField.layer.add(animate1, forKey: nil)
-//                passwordLabel.layer.add(animate1, forKey: nil)
-//
-//                let animate2 = CABasicAnimation.init(keyPath: "position.x")
-//                animate2.toValue = 700
-//                animate2.duration = 2
-//                userNameField.layer.add(animate2, forKey: nil)
-//                nameLabel.layer.add(animate2, forKey: nil)
-//
-//                let animate3 = CABasicAnimation.init(keyPath: "position.y")
-//                animate3.toValue = -700
-//                animate3.duration = 2
-//                vkImage.layer.add(animate3, forKey: nil)
-//                vkLabel.layer.add(animate3, forKey: nil)
-//
-//            UIView.animate(withDuration: 1.3, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0) {[weak self] in
-//                let animate4 = CABasicAnimation.init(keyPath: "position.y")
-//                animate4.toValue = 700
-//                animate4.duration = 2
-//                self?.buttonEnter.frame.origin.y -= 100
-//                self?.buttonEnter.layer.add(animate4, forKey: nil)
-//            } completion: {[weak self] _ in
-//                guard let self = self else {return}
-//               self.performSegue(withIdentifier: self.ToTabBarController, sender: nil)
-//            }
-//    } else {
-//        let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//        alert.addAction(action)
-//        present(alert, animated: true, completion: nil)
-//        }
-//    }
+
+extension MainViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        
+        decisionHandler(.allow)
+        
+        guard
+            let url = navigationResponse.response.url,
+            url.path == "/blank.html",
+            let fragment = url.fragment
+        else { return }
+        
+        let params = fragment
+            .components(separatedBy: "&")
+            .map { $0.components(separatedBy: "=")}
+            .reduce([String : String](), { partialResult, param in
+                var dict = partialResult
+                let key = param[0]
+                let value = param[1]
+                dict[key] = value
+                return dict
+            })
+        guard
+            let token = params["access_token"]
+        else { return }
+        
+        Session.instance.token = token
+        
+        print(Session.instance.token)
+        
+        performSegue(withIdentifier: "ToTabBarController", sender: nil)
+    }
+    
+}
+
+func sendGetRequestFrindsList() {
+    
+    var components = URLComponents(string: "http://api.vk.com/method/friends.get")
+    components?.queryItems = [
+        URLQueryItem(name: "access_token", value: Session.instance.token),
+        URLQueryItem(name: "fields", value: "name"),
+        URLQueryItem(name: "fields", value: "photo_200_orig"),
+        URLQueryItem(name: "v", value: "5.131")
+    ]
+    
+    guard let url = components?.url else { return }
+    
+    print (url)
+    
+    URLSession.shared.dataTask(with: url) { data, _, _  in
+        guard
+            let data = data,
+            let model = try? JSONDecoder().decode(GetFriendsResponse.self, from: data)
+        else { return }
+        
+//        print(model)
+        
+        let friends = model.response.items
+        
+        let friendsRealm: [FriendsRealm] = friends.map { friend in
+            let friendsRealm = FriendsRealm()
+            friendsRealm.id = friend.id
+            friendsRealm.firstName = friend.firstName
+            friendsRealm.lastName = friend.lastName
+            friendsRealm.photo = friend.photo
+            
+            return friendsRealm
+        }
+        saveFriends(friends: friendsRealm)
+    }.resume()
+}
+private func saveFriends(friends: [FriendsRealm]) {
+    do {
+        let realm = try Realm()
+        try realm.write {
+            friends.forEach { realm.add($0)}
+        }
+    } catch {
+        print(error)
+    }
+}
+
+func sendGetRequestPhotoList() {
+    
+    var components = URLComponents(string: "http://api.vk.com/method/photos.get")
+    components?.queryItems = [
+        URLQueryItem(name: "access_token", value: Session.instance.token),
+        URLQueryItem(name: "owner_id", value: "13138774"),
+        URLQueryItem(name: "album_id", value: "profile"),
+        URLQueryItem(name: "v", value: "5.131")
+    ]
+    
+    guard let url = components?.url else { return }
+    
+    URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+        guard
+            let data = data,
+            let model = try? JSONDecoder().decode(GetPhotoResponse.self, from: data)
+        else { return }
+        
+//        print(model)
+        
+        let photosRealm: [RealmGetPhoto] = model.response.items.map { photos in
+            let photosRealm = RealmGetPhoto()
+            photosRealm.id = photos.id
+            
+            let sizeRealm: [RealmPhotoSizes] = photos.sizes.map { post in
+                let  sizeRealm = RealmPhotoSizes()
+                sizeRealm.url = post.url
+                return sizeRealm
+            }
+            photosRealm.sizes.append(objectsIn: sizeRealm)
+            return photosRealm
+        }
+        savePhotos(photosUrl: photosRealm)
+    }.resume()
+}
+private func savePhotos(photosUrl: [RealmGetPhoto]) {
+    do {
+        let realm = try Realm()
+        try realm.write {
+            photosUrl.forEach { realm.add($0)}
+            
+        }
+    } catch {
+        print(error)
+    }
+}
+
+func sendGetRequestGroupsList() {
+    
+    var components = URLComponents(string: "http://api.vk.com/method/groups.get")
+    components?.queryItems = [
+        URLQueryItem(name: "access_token", value: Session.instance.token),
+        URLQueryItem(name: "extended", value: "1"),
+        URLQueryItem(name: "v", value: "5.131")
+    ]
+    
+    guard let url = components?.url else { return }
+    
+    URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+        guard
+            let data = data,
+            let model = try?
+                JSONDecoder().decode(GetGroupsResponse.self, from: data)
+        else { return }
+        
+        let groupsRealm: [RealmGetGroups] = model.response.items.map { groups in
+            let groupsRealm = RealmGetGroups()
+            groupsRealm.id = groups.id
+            groupsRealm.name = groups.name
+            groupsRealm.photo200 = groups.photo200
+            
+            return groupsRealm
+        }
+        saveGroups(groups: groupsRealm)
+    }.resume()
+}
+private func saveGroups(groups: [RealmGetGroups]) {
+    do {
+        let realm = try Realm()
+        try realm.write {
+            groups.forEach { realm.add($0)}
+        }
+    } catch {
+        print(error)
+    }
+}
 
 
